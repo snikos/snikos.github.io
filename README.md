@@ -1,2 +1,0 @@
-# snikos.github.io
-demcos
