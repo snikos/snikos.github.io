@@ -1,0 +1,610 @@
+@import url(checkbox.css);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body{
+	background:#f4f4f4;
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 18px;
+}
+.widBox{
+	background: transparent;
+	min-height: 220px;
+	position: relative;
+	font-family: Roboto, sans-serif;
+}
+.testBoxDesc{
+	background: #fff;
+    margin: 0 0;
+    position: relative;
+    padding: 1em 4em;
+    box-shadow: inset 0px -2px 0px 0px #f4f4f4;
+}
+
+/*navy menu*/
+.navMenuBox{
+    cursor: pointer;
+    display: block;
+    height: 58px;
+    width: 58px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+	z-index: 10;
+}
+.navMenuBoxToggle{
+	cursor: pointer;
+    display: block;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+	right: 25%;
+	bottom: 25%;
+	margin: auto;
+
+    background-color: rgba(255,255,255,0.1);
+    box-shadow: inset -14px -7px 14px 0px #f1f1f100, 0px -4px 0px 0px #ffffff00;
+    border-top: 3px solid rgb(30, 144, 255);
+    outline-offset: -1px;
+    outline: 1px solid rgba(30, 144, 255, 0);
+    box-sizing: border-box;
+    -webkit-transition: 0.15s ease all 0.15s;
+	-moz-transition: 0.15s ease all 0.15s;
+	transition: 0.15s ease all 0.15s;
+}
+.navMenuBoxToggle:before,
+.navMenuBoxToggle:after{
+	background: rgb(30, 144, 255);
+	content: "";
+	cursor: pointer;
+	display: block;
+	position: absolute;
+    -webkit-transition: 0.3s ease all 0.15s;
+	-moz-transition: 0.3s ease all 0.15s;
+	transition: 0.3s ease all 0.15s;
+}
+.navMenuBoxToggle:before{
+	top: 40%;
+    right: 0;
+    left: auto;
+    height: 3px;
+    width: 70%;
+}
+.navMenuBoxToggle:after{
+    top: 85%;
+    right: 0;
+    left: auto;
+    height: 3px;
+    width: 40%;
+}
+.navMenuBoxToggleOpen{
+	border-top-width: 0px;
+	outline-color: rgb(30, 144, 255);
+	outline-offset: 0;
+	/*border-top-color: transparent;*/
+}
+.navMenuBoxToggleOpen:before,
+.navMenuBoxToggleOpen:after{
+    top: 13px;
+    left: 6px;
+    width: 18px;
+}
+.navMenuBoxToggleOpen:before{
+    transform: rotate(-315deg);
+    -webkit-transform: rotate(-315deg);
+}
+.navMenuBoxToggleOpen:after{
+    transform: rotate(315deg);
+    -webkit-transform: rotate(315deg);
+}
+
+/**/
+.testBoxDesc:before{
+    content: "";
+    position: absolute;
+    z-index: -2;
+    top: 50%;
+    bottom: 0px;
+    left: 3%;
+    right: 3%;
+    -webkit-box-shadow: 0px 2px 6px rgba(132, 152, 171,1);
+    -moz-box-shadow: 0px 2px 6px rgba(132, 152, 171,1);
+    box-shadow: 0px 2px 6px rgba(132, 152, 171,1);
+    -moz-border-radius: 100px / 10px;
+    border-radius: 100px / 10px;
+}
+.testBoxDesc:after{
+	content: "";
+	position: absolute;
+	z-index: -2;
+}
+.testBoxList{
+	/*font-family: serif;*/
+    margin: 0 1em 0em;
+    position: relative;
+    padding: 1em;
+    font-size: 16px;
+}
+.testBoxListUnit{
+	padding: 12px 0;
+    box-shadow: 0px 1px 0px 0px #fff, 0px 2px 0px 0px #ccc;
+}
+.testBoxListUnitHeader{
+	display: none;
+    padding: 8px 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 1px 1px 0px #777777, 0px 0px 0px 4px #ffffff, 0px 0px 0px 5px #dcdcdc;
+    line-height: 22px;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #e0e0e0;
+	color: #016301;
+}
+.testBoxListUnitHeader.open{
+	display: block;
+}
+.testBoxListUnitCount{
+    display: inline-block;
+	width: 18px;
+}
+.testBoxListUnitLegend{
+	padding: 12px 0 0;
+}
+.testBoxListUnit > div{
+
+}
+.testBoxListUnit .exec{
+    color: rgb(30, 144, 255);
+    font-style: italic;
+    font-weight: 600;
+    display: inline-block;
+	padding: 0 4px;
+    text-align: center;
+}
+.testBoxListUnit del{
+    color: rgb(0,0,0);
+}
+.testBoxListUnit .exec.truly{
+    color: rgb(244, 67, 54);
+}
+.testBoxListBrick{
+    cursor: pointer;
+    line-height: 30px;
+    display: inline-block;
+    width: 98%;
+    padding-left: 2%;
+    background-color: rgb(255, 255, 255);
+    /* outline: 1px solid #dfdfdf; */
+    /*border-radius: 0 25px 25px 0;*/
+    box-shadow: 0px 0px 1px 0px #b9b8b8;
+}
+.testBoxList .truth > label{
+	background-color: rgb(255, 255, 255);
+	color: rgb(30, 144, 255);
+}
+.testBoxList .lie > label{
+    color: rgb(244, 67, 54);
+    text-decoration: line-through;
+}
+.testBoxList input{
+    margin: 0 8px 0 0;
+    vertical-align: middle;
+}
+.widBox .testBoxDescH2{
+	color: rgb(30, 144, 255);
+    font-size: 20px;
+    line-height: 22px;
+    padding-bottom: 6px;
+}
+.widBox .testBoxDescP{
+    color: rgb(2, 85, 167);
+    font-size: 14px;
+    line-height: 16px;
+    padding-bottom: 0px;
+}
+/*medal of honor was been a cool game before*/
+.mohWin{
+    background: rgba(255, 255, 255, 0.5);
+    display: block;
+    padding: 0px;
+    position: absolute;
+    top: 20%;
+    right: 2%;
+    bottom: auto;
+    outline: 3px solid rgba(30, 144, 255, 0.11);
+    min-width: 60px;
+    min-height: 80px;
+    outline-offset: -4px;
+    box-shadow: 0px 3px 6px 0px #b9b9b9;
+    /* border-radius: 5%; */
+    text-align: center;
+    outline-style: double;
+}
+.mohWin:before{
+    content: "";
+    background: rgba(255, 255, 255, 0.59);
+    display: block;
+    padding: 0px 0px;
+    position: absolute;
+    left: -6px;
+    right: -6px;
+    box-shadow: inset 0px 0px 6px 0px #b9b9b9, 0px 2px 3px 0px #bfbfbf;
+    border: 1px solid #fff;
+    height: 12px;
+    top: -12px;
+}
+.mohWinFix{
+    position: fixed;
+	top: 14px;
+    right: 10px;
+	left: auto;
+	z-index: 999;
+}
+
+.testBoxResBtn{
+    color: rgb(255, 255, 255);
+    background: #5a5a5a;
+    padding: 10px 20px;
+    border: 0px;
+    border-radius: 16px;
+    cursor: pointer;
+    outline: 0;
+}
+.testBoxResBtn:focus{
+	outline: 0;
+}
+
+.testBoxRes{
+	padding: 1em 0 0;
+}
+.testBoxResText{
+    padding-left: 14px;
+    vertical-align: middle;
+    font-weight: 600;
+	font-size: 14px;
+}
+.testBoxResText{
+	color: rgb(61, 109, 4);
+}
+
+.navTestBox{
+	background-color: #fff;
+    position: relative;
+    max-height: 300px;
+    overflow-y: auto;
+}
+.navTestBoxList{
+    height: 0px;
+    overflow: hidden;
+	opacity: 0;
+}
+.navTestBoxListOpen{
+    height: auto;
+	opacity: 1;
+    overflow: visible;
+	padding-left: 0em;
+}
+.navTestBoxListOpen li{
+	padding-left: 4em;
+}
+.navTestBoxLink{
+	cursor: pointer;
+    display: block;
+    background: rgb(255,255,255);
+    width: 100%;
+    border: 0px;
+    padding: 12px;
+    text-align: left;
+    box-shadow: inset 0px -1px 0px 0px rgba(30, 144, 255, 0.3);
+}
+.navTestBoxLinkCur{
+    box-shadow: -14px 0px 0px -10px rgb(138, 153, 255), inset 2px -2px 0px -1px rgb(138, 153, 255);
+    color: rgb(48, 153, 255);
+}
+
+.loading:after {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    animation: ellipsis 2s infinite;
+    content: "\2026"; /* ascii code for the ellipsis character */
+}
+@keyframes ellipsis {
+    from {
+        width: 2px;
+    }
+    to {
+        width: 15px;
+    }
+}
+
+/*80x60*/
+.box_honor_min{
+	background-color: transparent;
+	display: inline-block;
+	margin: 0 auto;
+	position: relative;
+	height: 80px;
+	width: 60px;
+	outline: 1px solid #f7f7f7;
+}
+.box_honor_min .planka{
+    background-color: #aaa;
+    height: 8px;
+    width: 56px;
+    border-radius: 6px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    background-image: linear-gradient(#ffffff, #b9b9b9);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    transition: background-position 0.5s;
+    box-shadow: 0px -1px 0px 0px #dedede, 0px 2px 4px 0px #888888;
+}
+.box_honor_min .planka:before{
+    background-color: #b5b5b5;
+    content: "";
+    height: 2px;
+    width: 46px;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    margin: auto;
+    box-shadow: 0px -1px 0px 0px #909090;
+}
+.box_honor_min .lenta_block{
+    background-color: #00d7fc;
+    height: 16px;
+    width: 40px;
+    margin: 0 auto;
+    z-index: 20;
+    position: relative;
+    top: -5px;
+    box-shadow: inset 8px 0px 0px 0px #68e9ff, inset 12px 0px 0px 0px #fff, inset -8px 0px 0px 0px #68e9ff, inset -12px 0px 0px 0px #fff;
+    border-radius: 0px 0px 4px 4px;
+}
+.box_honor_min .lenta_block:before{
+	content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-image: linear-gradient(#3e3e3e70, transparent);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.box_honor_min .lenta_block_back{
+    background-color: #dadada;
+    height: 18px;
+    width: 24px;
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 0;
+    box-shadow: inset 1px 0px 0px 0px #f5f5f5, inset 4px 0px 0px 0px #f9f9f9, inset -1px 0px 0px 0px #f5f5f5, inset -4px 0px 0px 0px #f9f9f9;
+    border-radius: 4px 4px 0 0;
+}
+.box_honor_min .lenta_block_back:before{
+    content: "";
+    height: 60%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-image: linear-gradient(#3e3e3e70, transparent);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+.box_honor_min .revers_block{
+    background-color: transparent;
+    outline: 1px solid #d8d8d800;
+    height: 60px;
+    position: relative;
+    top: 0px;
+    /* margin: 0 auto; */
+    z-index: 0;
+}
+.box_honor_min .coin20{
+	background-color: #ebf2f5;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    z-index: 20;
+    border-radius: 100%;
+    box-shadow: 0px 0px 2px 0px #7b7b7b;
+    background-image: linear-gradient(135deg, #fbfbfb 15%, #cacaca 100%);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.box_honor_min .coin_back{
+background-color: #fdfdfd;
+    content: "";
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    margin: auto;
+    box-shadow: 0px 0px 0px 1px #dadada;
+    background-image: linear-gradient(0deg, #fbfbfb 15%, #cacaca 100%);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    transform: rotate(135deg);
+}
+.box_honor_min .coin_back2{
+    background-color: #fdfdfd;
+    content: "";
+    height: 38px;
+    width: 38px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    margin: auto;
+    box-shadow: 0px 0px 0px 1px #dadada;
+    background-image: linear-gradient(45deg, #fbfbfb 15%, #cacaca 100%);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    transform: rotate(90deg);
+}
+.box_honor_min .coin_inner{
+    background-color: #fdfdfd;
+    content: "";
+    height: 38px;
+    width: 38px;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    margin: auto;
+    box-shadow: 0px 0px 0px 1px #dadada;
+    background-image: linear-gradient(-45deg, #fbfbfb 15%, #cacaca 100%);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.box_honor_min .coin_sub{
+	background-color: #fdfdfd;
+    content: "";
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 24;
+    margin: auto;
+    box-shadow: 0px 0px 0px 1px #d6d6d6;
+    background-image: linear-gradient(135deg, #fbfbfb 15%, #cacaca 100%);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.box_honor_min .coin_text{
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 28;
+    /* width: 48px; */
+    /* height: 48px; */
+    font-size: 18px;
+    line-height: 48px;
+    color: #aaa;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    font-family: monospace;
+    color: rgba(228, 228, 228, 0.58);
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.87), 1px 1px 0px #4CAF50, 2px 2px 0px #ffffff94, 3px 2px 0px #4caf5000;
+    border-radius: 100%;
+    overflow: hidden;
+    /* box-shadow: inset 1px 1px 1px 0px #f9f9f9, 1px 1px 6px 0px #b1b1b1; */
+}
+.box_honor_min .coin_text span{
+    display: inline-block;
+    text-indent: -4px;
+}
+.box_honor_min .coin_text:before{
+    content: "";
+    position: absolute;
+    display: block;
+    box-shadow: inset 3px 3px 6px 0px #f9f9f9, inset -3px -3px 6px 0px #cccccc;
+    z-index: 4;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+}
+
+/* Colors */
+.box_honor_min.gold .lenta_block{
+    background-color: #e09900;
+    box-shadow: inset 8px 0px 0px 0px #e0ca09, inset 12px 0px 0px 0px #fff, inset -8px 0px 0px 0px #e0ca09, inset -12px 0px 0px 0px #fff;
+}
+.box_honor_min.silver .lenta_block {
+    background-color: #cccccc;
+    box-shadow: inset 8px 0px 0px 0px #e6e6e6, inset 12px 0px 0px 0px #fff, inset -8px 0px 0px 0px #e6e6e6, inset -12px 0px 0px 0px #fff;
+}
+.box_honor_min.bronze .lenta_block{
+	background-color: rgb(216, 181, 131);
+    box-shadow: inset 8px 0px 0px 0px #ffb8ab, inset 12px 0px 0px 0px #fff, inset -8px 0px 0px 0px #ffb8ab, inset -12px 0px 0px 0px #fff;
+}

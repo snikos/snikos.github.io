@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title id="title">Testlish | description</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+
+<section class="widBox">
+	<div class="navMenuBox">
+		<span class="navMenuBoxToggle"></span>
+	</div>
+    <div class="navTestBox">
+	    <ul class="navTestBoxList"></ul>
+	</div>
+	<div class="testBoxDesc">
+		<h2 class="testBoxDescH2">Name test</h2>
+		<p class="testBoxDescP">Description test <span class="loading"></span></p>
+		<span class="mohWin"></span>
+	</div>
+	<form class="testBoxList" action="" name="">
+
+	</form>
+</section>
+
+<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="js/test0.js" class="ultrachoc"></script>
+<script type="text/javascript" src="js/test1.js" class="ultrachoc"></script>
+<script type="text/javascript" src="js/test2.js" class="ultrachoc"></script>
+<script type="text/javascript" src="js/jquery.build-tests-0.1.1.js" ></script>
+<script>
+(function($){
+  $('.widBox').buildTest({
+    currentObj : 'test0',
+		inputStyle: 'styled-input-e',
+		radioStyle: 'checkbox-b'
+	});
+})(jQuery);
+</script>
+</body>
+</html>

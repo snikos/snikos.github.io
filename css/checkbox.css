@@ -1,0 +1,221 @@
+/***************************************************/
+/*
+<div class="styled-input-single">
+    <input name="fieldset-2" id="radio2-example-one" type="radio">
+    <label for="radio2-example-one"><span class="choc"></span>Example Title</label>
+</div>
+<div class="styled-input-single">
+    <input name="fieldset-2" id="radio2-example-two" type="radio">
+    <label for="radio2-example-two"><span class="choc"></span>Example Title</label>
+</div>
+*/
+.styled-input-single {
+  position: relative;
+  padding: 5px 0 5px 30px;
+  text-align: left;
+}
+.styled-input-single label{
+  cursor: pointer;
+  position: relative;
+}
+.styled-input-single label .choc{
+	cursor: pointer;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -31px;
+  height: 30px;
+  width: 30px;
+  background: #fff;
+	overflow: hidden;
+  outline: 1px solid rgb(30, 144, 255);
+}
+.styled-input-single label .choc:before,
+.styled-input-single label .choc:after{
+	content:"";
+	cursor: pointer;
+	display: block;
+}
+.styled-input-single label .choc:before,
+.styled-input-single label .choc:after {
+  content: '';
+  opacity: 0;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 15px;
+  height: 15px;
+  border-radius: 0;
+}
+.styled-input-single label .choc:before {
+  width: 30px;
+  height: 30px;
+  background: #f7f7f7;
+  -webkit-box-shadow: 0 0 1px grey;
+          box-shadow: 0 0 1px grey;
+}
+.styled-input-single label .choc:after {
+  opacity: 0;
+  background: #37b2b2;
+  -webkit-transition: opacity 0.25s ease-in-out, left 0.25s ease-in-out, top 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out, left 0.25s ease-in-out, top 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out, left 0.25s ease-in-out, top 0.25s ease-in-out;
+}
+.styled-input-single.truth label .choc {
+  /*background: rgb(30, 144, 255);*/
+}
+.styled-input-single.lie{
+	background-color: rgba(244, 67, 54, 0.18);
+}
+.styled-input-single.lie label .choc {
+  /*background: rgba(244, 67, 54, 0);*/
+  opacity: 0.1;
+}
+.styled-input-single input[type="radio"],
+.styled-input-single input[type="checkbox"] {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+  visibility: hidden;
+}
+.styled-input-single input[type="radio"]:checked + label .choc:after,
+.styled-input-single input[type="checkbox"]:checked + label .choc:after {
+  opacity: 1;
+}
+
+/* styled-input-a */
+.styled-input-a label .choc:after{
+    opacity: 1;
+    width: 10px;
+    height: 2px;
+    box-shadow: none;
+    background: #fff;
+    top: 14px;
+	left: -16px;
+    border-radius: 0;
+   transition: all 0.6s cubic-bezier(1, 0, 0.4, 1);
+    -webkit-transition: all 0.6s cubic-bezier(1, 0, 0.4, 1);
+}
+.styled-input-a label .choc:before {
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+	border-radius: 0;
+	outline: 3px double #fff;
+    background-color: #37b2b2;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    transition: all 0.4s cubic-bezier(1, 0, 0.4, 0.5);
+    -webkit-transition: all 0.4s cubic-bezier(1, 0, 0.4, 0.5);
+}
+.styled-input-a input[type="radio"]:checked + label .choc:before,
+.styled-input-a input[type="checkbox"]:checked + label .choc:before{
+	opacity: 1;
+	outline-color: #37b2b2;
+	outline-offset: 6px;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+	transition: opacity 0.25s ease-in-out 0s, outline-offset 0.25s ease-in-out 0.75s;
+}
+.styled-input-a input[type="radio"]:checked + label .choc:after,
+.styled-input-a input[type="checkbox"]:checked + label .choc:after{
+	left: 10px;
+}
+
+/* styled-input-b */
+.styled-input-b label .choc{
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+.styled-input-b label .choc:before {
+	top: 4px;
+    left: 4px;
+    width: 22px;
+    height: 22px;
+	background: #fff;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+.styled-input-b label .choc:after {
+	top: -36px;
+    left: 9px;
+    width: 12px;
+    height: 12px;
+    opacity: 0;
+    background: #37b2b2;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+.styled-input-b input[type="radio"]:checked + label .choc:after,
+.styled-input-b input[type="checkbox"]:checked + label .choc:after {
+  top: 9px;
+  opacity: 1;
+}
+
+/* styled-input-c */
+.styled-input-c label .choc{
+    background-color: #fff;
+}
+.styled-input-c label .choc:after {
+	top: 0;
+    left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+    width: 100%;
+    height: 100%;
+	background-color: #fff;
+	transition: width 0.25s ease-in-out 0s, height 0.25s ease-in-out 0s;
+}
+.styled-input-c input[type="radio"]:checked + label .choc:after,
+.styled-input-c input[type="checkbox"]:checked + label .choc:after {
+    width: 50%;
+    height: 50%;
+	background-color: #37b2b2;
+}
+/* styled-input-d */
+.styled-input-d label .choc{
+    background-color: #fff;
+}
+.styled-input-d label .choc:before {
+	top: 0;
+    left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+    width: 26%;
+    height: 26%;
+	background-color: #fff;
+	transition: width 0.25s ease-in-out 0s, height 0.25s ease-in-out 0s;
+}
+.styled-input-d label .choc:after {
+	top: 0;
+    left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+    width: 26%;
+    height: 26%;
+	background: transparent;
+	transition: background 0.25s ease-in-out 0.5s;
+}
+.styled-input-d input[type="radio"]:checked + label .choc:before,
+.styled-input-d input[type="checkbox"]:checked + label .choc:before {
+	background-color: #37b2b2;
+	opacity: 1;
+    width: 60%;
+    height: 60%;
+}
+.styled-input-d input[type="radio"]:checked + label .choc:after,
+.styled-input-d input[type="checkbox"]:checked + label .choc:after {
+	background: #fff;
+	opacity: 1;
+}
