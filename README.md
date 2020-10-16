@@ -1,2 +1,5 @@
 # snikos.github.io
-demcos
+
+#and:
+
+relocate local folder
