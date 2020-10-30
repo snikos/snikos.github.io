@@ -1,5 +1,12 @@
-Preview: https://snikos.github.io/testlish/
+## Testlish
 
-#and:
+### The app is for test of knowledge languages
 
-testlish
+### DEMO
+https://snikos.github.io/testlish/
+
+### meta
+Bilingual
+Pass the test
+English
+Knowledge
